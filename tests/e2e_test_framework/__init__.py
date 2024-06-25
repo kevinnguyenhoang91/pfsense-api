@@ -374,6 +374,9 @@ class APIE2ETest:
             req_only=True
         )
 
+        # Delete the test user
+        self.delete_user(username)
+
         # Create the test user with no privileges to start and make a request
         self.create_or_update_user(username, password, [priv])
         priv_resp = self.make_request(
